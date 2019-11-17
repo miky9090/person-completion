@@ -40,7 +40,7 @@ class PersonServiceBeanTest {
 	private StateServiceBean stateService;
 	
 	@Mock
-	private DocumentServiceBean documentService;
+	private DocumentServiceBeanWithDiscovery documentService;
 	
 	@Mock
 	private AgeValidationServiceBean ageValidationService;

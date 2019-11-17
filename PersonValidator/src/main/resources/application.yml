@@ -1,6 +1,3 @@
-
-server.port: 9080
-
 spring:
   messages:
     fallback-to-system-locale: false
@@ -11,7 +8,6 @@ spring:
     password: password
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
-
 person:
   application:
     state:
@@ -25,3 +21,21 @@ person:
     max-age: 120
     max-name-length: 80
     expected-nationality-character-count: 3
+server:
+  port: 8080
+eureka:
+  client:
+    enabled: false
+
+---
+spring:
+  profiles: discovery
+  application:
+    name: person-service
+eureka:
+  client:
+    enabled: true
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://service-discovery-service:8761/eureka}

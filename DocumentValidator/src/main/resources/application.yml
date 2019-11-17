@@ -1,10 +1,13 @@
 logging:
   level:
     com.mlestyan: info
-    
-server.port: 9090
+
+server:
+  port: 9090
 
 spring:
+  application:
+    name: document-service
   messages:
     fallback-to-system-locale: false
   datasource:
@@ -29,3 +32,17 @@ document:
     - JPEG
     image-width: 827
     image-height: 1063
+eureka:
+  client:
+    enabled: false
+
+---
+spring:
+  profiles: discovery
+eureka:
+  client:
+    enabled: true
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://service-discovery-service:8761/eureka}
