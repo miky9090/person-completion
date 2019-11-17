@@ -1,0 +1,42 @@
+version: '3.7'
+services:
+  service-discovery-service:
+    image: miky9090/service-discovery
+    ports:
+      - 8761:8761
+    networks:
+      person-validation-network:
+        aliases:
+          - service-discovery-service
+  person-validator-service:
+    image: miky9090/person-validator
+    ports:
+      - 8080:8080
+    depends_on:
+      - service-discovery-service
+    networks:
+      person-validation-network:
+        aliases:
+          - person-validator-service
+    environment:
+      - 'SPRING_PROFILES_ACTIVE=discovery'
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://service-discovery-service:8761/eureka
+    restart: on-failure
+  document-validator-service:
+    image: miky9090/document-validator
+    ports:
+      - 9090:9090
+    depends_on:
+      - service-discovery-service
+    networks:
+      person-validation-network:
+        aliases:
+          - document-validator-service
+    environment:
+      - 'SPRING_PROFILES_ACTIVE=discovery'
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://service-discovery-service:8761/eureka
+    restart: on-failure
+networks:
+  person-validation-network:
