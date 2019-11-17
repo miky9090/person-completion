@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: discovery-server
+
+eureka:
+  client:
+    # Fault-tolerance requires that there is another instance of eureka server, but in development mode we should disable it
+    register-with-eureka: false
+    
+    # Since this is the eureka server, there is no other eureka server to fetch data from
+    fetch-registry: false
+
+server:
+  # Default port for eureka discovery server
+  port: 8761
