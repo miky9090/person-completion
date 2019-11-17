@@ -12,6 +12,7 @@ You can run the following commands for each of the main modules ([DocumentValida
 Then go to the target directory and run 
 
 `java -jar person-validator-0.0.1-SNAPSHOT.jar`
+
 `java -jar document-validator-0.0.1-SNAPSHOT.jar`
 
 Person validator will run on port 8080.
