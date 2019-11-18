@@ -47,11 +47,11 @@ If you have the above error message, then open maven's settings.xml, and add the
 
 ```xml
 <settings ...>
-    ...
+  ...
     <pluginGroups>
-		<pluginGroup>com.spotify</pluginGroup>
-	</pluginGroups>
-	...
+      <pluginGroup>com.spotify</pluginGroup>
+    </pluginGroups>
+  ...
 </settings>
 ```
 
