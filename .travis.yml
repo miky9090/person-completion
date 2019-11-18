@@ -5,3 +5,9 @@ script:
   - cd PersonValidator
   - chmod +x mvnw
   - ./mvnw clean install
+  - cd ../DocumentValidator
+  - chmod +x mvnw
+  - ./mvnw clean install
+  - cd ../service-discovery
+  - chmod +x mvnw
+  - ./mvnw clean install
