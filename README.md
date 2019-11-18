@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/miky9090/person-completion.png?branch=master)](https://travis-ci.org/miky9090/person-completion)
+[![Build Status](https://travis-ci.com/miky9090/person-completion.png?branch=master)](https://travis-ci.com/miky9090/person-completion)
 
 # Person Completion Services
 The application works with or without docker.
