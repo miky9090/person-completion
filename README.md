@@ -71,9 +71,10 @@ Service discovery will run on [localhost:8761](http://localhost:8761)
 ### Improvements for the future
 Because of time shortage, I couldn't develop the application further, but here are the list of things I would have also done:
 
+ - Generate server stubs and client SDK with Swagger Codegen
  - Distributed cloud configuration
  - Circuit breakers
  - API Gateway
- - Distributed tracing Zipkin
+ - Distributed tracing
  - Using reactive streams and bean validation
  - ...
