@@ -1,4 +1,5 @@
 
+
 # Person Completion Services
 The application works with or without docker.
 ## Using the application *without* docker
@@ -16,9 +17,10 @@ Then go to the target directory and run
 `java -jar document-validator-0.0.1-SNAPSHOT.jar`
 
 Person validator will run on port 8080.
+
 Document validator will run on port  9090.
 
-In order to see the application working, go to
+In order to see the applications working, go to
 
 [localhost:8080](http://localhost:8080)
 
@@ -40,6 +42,19 @@ Run the following command in the directory of each application ([DocumentValidat
 
     mvn clean install dockerfile:build 
 
+#### Resolve "No plugin found for prefix 'dockerfile' in the current project" problem
+If you have the above error message, then open maven's settings.xml, and add the following plugin group information:
+
+```xml
+<settings ...>
+    ...
+    <pluginGroups>
+		<pluginGroup>com.spotify</pluginGroup>
+	</pluginGroups>
+	...
+</settings>
+```
+
 After building the docker images, you can run them by using the provided [docker-compose.yml](https://github.com/miky9090/person-completion/blob/master/compose/docker-compose.yml "docker-compose.yml") file.
 In order to run the images, go to the compose folder and run the following command:
 
@@ -47,14 +62,17 @@ In order to run the images, go to the compose folder and run the following comma
 
 This will find the 3 docker images, and will run them.
 
-Person validator will run on port 8080.
-Document validator will run on port  9090.
-Service discovery will run on port 8761.
+Person validator will run on [localhost:8080](http://localhost:8080)
 
-In order to see the application working, go to
+Document validator will run on [localhost:9090](http://localhost:9090)
 
-[localhost:8080](http://localhost:8080)
+Service discovery will run on [localhost:8761](http://localhost:8761)
 
-[localhost:9090](http://localhost:9090)
+### Improvements for the future
+Because of time shortage, I couldn't develop the application further, but here are the list of things I would have also done:
 
-[localhost:8761](http://localhost:8761)
+ - Distributed cloud configuration
+ - Circuit breakers
+ - API Gateway
+ - Distributed tracing Zipkin
+ - ...
