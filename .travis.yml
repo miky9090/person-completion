@@ -3,3 +3,4 @@ jdk: oraclejdk9
 install: true
 script:
   - cd PersonValidator
+  - mvnw clean install
