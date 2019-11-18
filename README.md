@@ -75,4 +75,5 @@ Because of time shortage, I couldn't develop the application further, but here a
  - Circuit breakers
  - API Gateway
  - Distributed tracing Zipkin
+ - Using reactive streams and bean validation
  - ...
